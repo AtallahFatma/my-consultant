@@ -87,8 +87,8 @@ function Header(props) {
             </Title>
             <StyledItems>
                 <li>
-                    <img src="//dam.malt.com/rebranding2020/flags/flag-FR" alt="FR" class="ls-country-flag" />
-                    <span class="ls-code">fr</span>
+                    <img src="//dam.malt.com/rebranding2020/flags/flag-FR" alt="FR" className="ls-country-flag" />
+                    <span className="ls-code">fr</span>
                 </li>
                 <li>
                     <BtnSecondary href="/create-profile">
