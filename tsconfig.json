@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react",
+    "lib": ["dom", "es2017"],
+    "moduleResolution": "node",
+    "allowJs": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "typeRoots": ["node_modules/@types", "./types"],
+    "baseUrl": ".",
+    // "paths": {
+    //   "#constants": ["./constants"],
+    //   "#constants/*": ["./constants/*"],
+    //   "#components/*": ["./components/*"],
+    //   "#static/*": ["./public/static/*"],
+    //   "#lib/*": ["./lib/*"],
+    //   "#api/*": ["./api/*"],
+    //   "#config/*": ["./config/*"],
+    //   "#pages/*": ["./pages/*"],
+    //   "#rematch/*": ["./rematch/*"],
+    //   "#temporary/*": ["./temporary/*"],
+    //   "#tags/*": ["./tags/*"],
+    //   "#i18n": ["./i18n"]
+    // },
+    "noImplicitAny": false
+  },
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+}
