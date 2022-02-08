@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import colors from "../../../styling/colors";
 
 const ButtonContainer = styled.a<{ variant?: string }>`
   font-family: Moderat, Arial, Helvetica, sans-serif;
@@ -15,19 +14,19 @@ const ButtonContainer = styled.a<{ variant?: string }>`
   outline: none;
   opacity: 1;
   position: relative;
-  color: ${({ variant }) => {
-    if (variant === "main") return colors.light;
-    else if (variant === "secondary") return colors.secondaryBlue;
-    return colors.light;
+  color: ${({ variant, theme }) => {
+    if (variant === "main") return theme.light;
+    else if (variant === "secondary") return theme.secondaryBlue;
+    return theme.light;
   }};
-  background-color: ${({ variant }) => {
-    if (variant === "main") return colors.primary;
+  background-color: ${({ variant, theme }) => {
+    if (variant === "main") return theme.primary;
     else if (variant === "secondary") return "transparent";
-    return colors.secondaryBlue;
+    return theme.secondaryBlue;
   }};
   border: 2px solid
-    ${({ variant }) => {
-      if (variant === "secondary") return colors.secondaryBlue;
+    ${({ variant, theme }) => {
+      if (variant === "secondary") return theme.secondaryBlue;
       return "transparent";
     }};
 `;
