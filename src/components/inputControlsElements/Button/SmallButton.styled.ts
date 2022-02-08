@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button from "./Button.tsx";
+import Button from "./Button";
 
 export const BtnSmall = styled(Button)`
   min-height: 42px;
