@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledFooterContainer, StyledFooterUnderBar, StyledLinkBrand } from './Footer.styled';
-
+import { Icon } from '../../inputControlsElements/icon'
 const Footer = () => {
 
     const renderUnderBar = () => {
@@ -12,19 +12,19 @@ const Footer = () => {
                 </StyledLogoUpplyWrapper> */}
                 <div className="col-xs-8 col-sm-7 col-md-3 text-center-md text-right">
                     <StyledLinkBrand href="twitter" target="_blank" rel="noopener noreferrer">
-                        {/* <Icon icon="twitter" /> */}
+                        <Icon icon="twitter" />
                     </StyledLinkBrand>
 
                     <StyledLinkBrand href="linkedin" target="_blank" rel="noopener noreferrer">
-                        {/* <Icon icon="linkedin" /> */}
+                        <Icon icon="linkedin" />
                     </StyledLinkBrand>
 
                     <StyledLinkBrand href="youtube" target="_blank" rel="noopener noreferrer">
-                        {/* <Icon icon="youtube" /> */}
+                        <Icon icon="youtube" />
                     </StyledLinkBrand>
 
                     <StyledLinkBrand href="facebook" target="_blank" rel="noopener noreferrer">
-                        {/* <Icon icon="facebook" /> */}
+                        <Icon icon="facebook" />
                     </StyledLinkBrand>
                 </div>
             </StyledFooterUnderBar>
