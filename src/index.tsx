@@ -19,8 +19,8 @@ const client = new ApolloClient({
 client
   .query({
     query: gql`
-      query getUsers {
-        getUsers {
+      query fetchAllUsers {
+        fetchAllUsers {
           id
           first_name
           last_name
