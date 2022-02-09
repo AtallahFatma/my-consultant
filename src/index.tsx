@@ -7,29 +7,13 @@ import App from './App';
 import {
   ApolloClient,
   InMemoryCache,
-  ApolloProvider,
-  gql
+  ApolloProvider
 } from "@apollo/client";
 
 const client = new ApolloClient({
   uri: 'http://localhost:6969/graphql',
   cache: new InMemoryCache()
 });
-
-client
-  .query({
-    query: gql`
-      query fetchAllUsers {
-        fetchAllUsers {
-          id
-          first_name
-          last_name
-        }
-      }
-    `
-  })
-  .then(result => console.log(result));
-
 
 ReactDOM.render(
   <ApolloProvider client={client}>
