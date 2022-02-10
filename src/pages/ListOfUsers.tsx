@@ -14,9 +14,9 @@ interface UserData {
   fetchAllUsers: User[];
 }
 function ListOfUsers() {
-     const { loading, error, data } = useQuery<UserData>(FETCH_USERS);
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+    const { loading, error, data } = useQuery<UserData>(FETCH_USERS);
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error :(</p>;
     
     return (
       <>
@@ -30,7 +30,6 @@ function ListOfUsers() {
             </tr>
           </thead>
           <tbody>
-            {console.log(data && data.fetchAllUsers)}
             {data &&
               data.fetchAllUsers.map((user, index) => (
                 <tr key={index}>
