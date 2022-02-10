@@ -1,6 +1,23 @@
+import { useQuery } from '@apollo/client';
 import React from 'react';
+import { FETCH_USERS } from 'src/graphql/Queries';
 
-function ListOfUsers({data}) {
+interface User {
+  id: number;
+  first_name: string;
+  last_name: string;
+  email: string;
+  password: string;
+}
+
+interface UserData {
+  fetchAllUsers: User[];
+}
+function ListOfUsers() {
+     const { loading, error, data } = useQuery<UserData>(FETCH_USERS);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+    
     return (
       <>
         <h3>Users list</h3>
