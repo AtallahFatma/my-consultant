@@ -1,6 +1,6 @@
 import React from 'react';
 
-function List({data}) {
+function ListOfUsers({data}) {
     return (
       <>
         <h3>Users list</h3>
@@ -28,4 +28,4 @@ function List({data}) {
     );
 }
 
-export default List;
+export default ListOfUsers;

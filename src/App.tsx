@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from './components/layout/navigation/Layout';
 import { useQuery } from "@apollo/client";
 import { FETCH_USERS } from "src/graphql/Queries";
-import List from './pages/List';
+import ListOfUsers from './pages/ListOfUsers';
 
 interface User {
   id: number;
@@ -24,7 +24,7 @@ function App() {
 
   return (
       <Layout>
-        <List data={data} />
+        <ListOfUsers data={data} />
       </Layout>
   );
 }
