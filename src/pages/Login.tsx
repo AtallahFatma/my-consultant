@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'src/components';
+import { Link } from "react-router-dom";
 
 function Login() {
     
@@ -14,9 +15,11 @@ function Login() {
                 <label>Password</label>
                 <input type="password" placeholder="Password" />
             </div>
-            <Button onPress={() => console.log("Hello!")} >
-                Login
-            </Button>
+            <Link to="/listOfUsers">  
+                <Button onPress={() => console.log("Hello!")} >
+                    Login
+                </Button>
+            </Link>
         </div>
     );
 }
