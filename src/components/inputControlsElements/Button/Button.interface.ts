@@ -5,6 +5,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   isLoading?: boolean;
   href?: string;
+  onPress?: () => void;
 }
 
 export type Props = ButtonProps;

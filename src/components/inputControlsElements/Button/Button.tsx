@@ -3,10 +3,10 @@ import { Props } from "./Button.interface";
 import ButtonContainer from "./Button.styled";
 
 const Button: FC<Props> = (props) => {
-    const { children, variant } = props;
+    const { children, variant, onPress } = props;
 
     return (
-        <ButtonContainer variant={variant}>
+        <ButtonContainer variant={variant} onClick={onPress}>
             {children}
         </ButtonContainer>
     );

@@ -1,10 +1,10 @@
 import { applyStyleFrom } from "./../../../styling/mediaQueries";
 import styled from "styled-components";
 
-const ButtonContainer = styled.a<{ variant?: string }>`
+const ButtonContainer = styled.button<{ variant?: string }>`
   font-family: Moderat, Arial, Helvetica, sans-serif;
   transition: background-color 0.4s, border 0.4s;
-  min-height: 53px;
+  min-height: 33px;
   padding: 5px 10px;
   font-size: 12px;
   ${applyStyleFrom().md`

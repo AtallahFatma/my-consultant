@@ -3,7 +3,6 @@ import React from 'react';
 import { FETCH_USERS } from 'src/graphql/Queries';
 
 interface User {
-  id: number;
   first_name: string;
   last_name: string;
   email: string;
