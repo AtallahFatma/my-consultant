@@ -11,6 +11,7 @@ import {
 import App from './App';
 import CreateUser from './pages/CreateUser';
 import ListOfUsers from './pages/ListOfUsers';
+import Layout from './components/layout/navigation/Layout';
 
 const client = new ApolloClient({
   uri: 'http://localhost:6969/graphql',
@@ -20,21 +21,23 @@ const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <React.StrictMode>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="createUser" element={<CreateUser />} />
-          <Route path="listOfUsers" element={<ListOfUsers />} />
-          <Route
-            path="*"
-            element={
-              <main style={{ padding: "1rem" }}>
-                <p>There's nothing here!</p>
-              </main>
-            }
-          />
-        </Routes> 
-      </BrowserRouter>
+      <Layout>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="createUser" element={<CreateUser />} />
+            <Route path="listOfUsers" element={<ListOfUsers />} />
+            <Route
+              path="*"
+              element={
+                <main style={{ padding: "1rem" }}>
+                  <p>There's nothing here!</p>
+                </main>
+              }
+            />
+          </Routes> 
+        </BrowserRouter>
+      </Layout>
     </React.StrictMode>
   </ApolloProvider>,
   document.getElementById('root')
