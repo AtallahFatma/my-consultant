@@ -6,23 +6,44 @@ import reportWebVitals from './reportWebVitals';
 import {
   ApolloClient,
   InMemoryCache,
-  ApolloProvider
+  ApolloProvider,
+  createHttpLink,
 } from "@apollo/client";
+import { setContext } from '@apollo/client/link/context';
+
 import App from './App';
 import CreateUser from './pages/CreateUser';
 import ListOfUsers from './pages/ListOfUsers';
 import Layout from './components/layout/navigation/Layout';
+import { AUTH_TOKEN } from './constants/constants';
 
+const httpLink = createHttpLink({
+    uri: 'http://localhost:6969/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem(AUTH_TOKEN);
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : ''
+    }
+  };
+});
+
+// This middleware will be invoked every time ApolloClient sends a request to the server. 
+//Apollo Links allow us to create middlewares that modify requests before they are sent to the server.
 const client = new ApolloClient({
-  uri: 'http://localhost:6969/graphql',
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
+  link: authLink.concat(httpLink)
 });
 
 ReactDOM.render(
   <ApolloProvider client={client}>
     <React.StrictMode>
-      <Layout>
-        <BrowserRouter>
+      <BrowserRouter>
+        <Layout>
           <Routes>
             <Route path="/" element={<App />} />
             <Route path="createUser" element={<CreateUser />} />
@@ -36,8 +57,8 @@ ReactDOM.render(
               }
             />
           </Routes> 
-        </BrowserRouter>
-      </Layout>
+          </Layout>
+      </BrowserRouter>
     </React.StrictMode>
   </ApolloProvider>,
   document.getElementById('root')

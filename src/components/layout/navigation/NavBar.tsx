@@ -1,19 +1,37 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AUTH_TOKEN } from 'src/constants/constants';
 import { Button } from "../..";
 import { StyledItems, Title, Wrapper } from './NavBar.styled';
 
 function Header() {
+  let navigate = useNavigate();
+  const authToken = localStorage.getItem(AUTH_TOKEN);
   return (
     <Wrapper>
       <Title>Hello World!</Title>
       <StyledItems>
         <li>
-          <img
-            src="//dam.malt.com/rebranding2020/flags/flag-FR"
-            alt="FR"
-            className="ls-country-flag"
-          />
-          <span className="ls-code">fr</span>
+          <div className="flex flex-fixed">
+            {authToken ? (
+              <Button
+                className="ml1 pointer black"
+                onPress={() => {
+                  localStorage.removeItem(AUTH_TOKEN);
+                  navigate("/");
+                }}
+              >
+                Logout
+              </Button>
+            ) : (
+              <Link
+                to="/login"
+                className="ml1 no-underline black"
+              >
+                <Button>Login</Button>
+              </Link>
+            )}
+          </div>
         </li>
         <li>
           <Button variant="secondary" href="/create-profile">
