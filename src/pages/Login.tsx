@@ -20,7 +20,7 @@ const Login = () => {
         password: formState.password
     },
     onCompleted: ({ login }) => {
-        localStorage.setItem(AUTH_TOKEN, login.accessToken);
+        localStorage.setItem(AUTH_TOKEN, login.token);
         navigate('/listOfUsers');
     }
     });
@@ -32,7 +32,7 @@ const Login = () => {
         password: formState.password
     },
     onCompleted: ({ signup }) => {
-        localStorage.setItem(AUTH_TOKEN, signup.accessToken);
+        localStorage.setItem(AUTH_TOKEN, signup.token);
         navigate('/');
     }
     });
