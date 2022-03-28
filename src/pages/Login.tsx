@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Button } from 'src/components';
+import { Button } from '../components';
 import { useNavigate } from "react-router-dom";
 import { useMutation } from '@apollo/client';
-import { AUTH_TOKEN } from 'src/constants/constants';
-import { LOGIN_MUTATION, SIGNUP_MUTATION } from 'src/graphql/Mutation';
+import { AUTH_TOKEN } from '../constants/constants';
+import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../graphql/Mutation';
 
 const Login = () => {
   const navigate = useNavigate();

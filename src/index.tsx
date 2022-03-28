@@ -16,6 +16,7 @@ import CreateUser from './pages/CreateUser';
 import ListOfUsers from './pages/ListOfUsers';
 import Layout from './components/layout/navigation/Layout';
 import { AUTH_TOKEN } from './constants/constants';
+import Login from './pages/Login';
 
 const httpLink = createHttpLink({
     uri: 'http://localhost:6969/graphql',
@@ -46,6 +47,7 @@ ReactDOM.render(
         <Layout>
           <Routes>
             <Route path="/" element={<App />} />
+            <Route path="/login" element={<Login />} />
             <Route path="createUser" element={<CreateUser />} />
             <Route path="listOfUsers" element={<ListOfUsers />} />
             <Route

@@ -1,5 +1,5 @@
 import React from "react";
-import theme from "src/styling/theme";
+import theme from "../../../styling/theme";
 import { ThemeProvider } from "styled-components";
 import Footer from "../footer/Footer";
 import { StyledChildren, StyledContent, StyledWrapper } from "./Layout.styled";

@@ -1,4 +1,4 @@
-import { applyStyleUntil } from "src/styling/mediaQueries";
+import { applyStyleUntil } from "../../../styling/mediaQueries";
 import styled from "styled-components";
 
 export const StyledWrapper = styled.div<{ isConnected: boolean }>`

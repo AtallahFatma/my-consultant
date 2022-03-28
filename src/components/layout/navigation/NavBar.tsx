@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AUTH_TOKEN } from 'src/constants/constants';
+import { AUTH_TOKEN } from '../../../constants/constants';
 import { Button } from "../..";
 import { StyledItems, Title, Wrapper } from './NavBar.styled';
 

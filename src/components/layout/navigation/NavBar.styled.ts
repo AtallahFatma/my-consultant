@@ -1,4 +1,4 @@
-import { applyStyleFrom } from "src/styling/mediaQueries";
+import { applyStyleFrom } from "../../../styling/mediaQueries";
 import styled from "styled-components";
 
 export const Title = styled.h1`
