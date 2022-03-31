@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { SET_USER } from "../graphql/Mutation";
-import { Button } from "../components";
+import { SET_USER } from "../src/graphql/Mutation";
+import { Button } from "../src/components";
 
 function CreateUser() {
   const [firstName, setFirstName] = useState("");

@@ -13,7 +13,6 @@ export default {
     light25: '#F4F4F4',
     light: '#FFFFFF',
 
-    // Property         Comment                                     New color   # of occurences
     lightblue: '#23d5ff',
     yellow: '#F2B600',
     grey: '#ABABC3',

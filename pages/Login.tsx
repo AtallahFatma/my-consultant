@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Button } from '../components';
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { useMutation } from '@apollo/client';
-import { AUTH_TOKEN } from '../constants/constants';
-import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../graphql/Mutation';
+import { AUTH_TOKEN } from 'src/constants/constants';
+import { LOGIN_MUTATION, SIGNUP_MUTATION } from 'src/graphql/Mutation';
+import { Button } from 'src/components';
 
 const Login = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [formState, setFormState] = useState({
     login: true,
     email: '',
@@ -21,7 +21,7 @@ const Login = () => {
     },
     onCompleted: ({ login }) => {
         localStorage.setItem(AUTH_TOKEN, login.token);
-        navigate('/listOfUsers');
+        router.push('/listOfUsers');
     }
     });
 
@@ -33,7 +33,7 @@ const Login = () => {
     },
     onCompleted: ({ signup }) => {
         localStorage.setItem(AUTH_TOKEN, signup.token);
-        navigate('/');
+        router.push('/');
     }
     });
   return (

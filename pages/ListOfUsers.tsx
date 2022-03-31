@@ -1,8 +1,8 @@
 import { useQuery } from '@apollo/client';
 import React, { useEffect } from 'react';
-import { AUTH_TOKEN } from '../constants/constants';
-import { FETCH_USERS } from '../graphql/Queries';
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
+import { FETCH_USERS } from 'src/graphql/Queries';
+import { AUTH_TOKEN } from 'src/constants/constants';
 
 interface User {
   first_name: string;
@@ -15,13 +15,13 @@ interface UserData {
   fetchAllUsers: User[];
 }
 function ListOfUsers() {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const { loading, error, data } = useQuery<UserData>(FETCH_USERS);
     
     useEffect(() => {
       if (!localStorage.getItem(AUTH_TOKEN)) {
-        navigate('/')
+        router.push('/')
       }
     });
 

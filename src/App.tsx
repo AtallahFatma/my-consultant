@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import Login from './pages/Login';
+import Link from "next/link";
+import Login from 'pages/Login';
+import './index.css';
 
 function App() {
   return (
@@ -10,8 +11,12 @@ function App() {
           borderBottom: "solid 1px",
           paddingBottom: "1rem"
         }}>
-        <Link to="/createUser">Add a user</Link> |{" "}
-        <Link to="/listOfUsers">List of users</Link>
+        <Link href="/createUser">
+          <a>Add a user</a>
+        </Link> |{" "}
+        <Link href="/listOfUsers">
+          <a>List of users</a>
+        </Link>
       </nav>
       <Login />
     </>
